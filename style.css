@@ -42,7 +42,9 @@ video {
 /* 3. Styles for the Dialogue Box */
 
 #letter-dialogue {
-    display: none; /* Initially hide the dialogue box */
+    /* *** CRITICAL FIX: Hide the box until the video 'ended' event fires *** */
+    display: none; 
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -51,8 +53,7 @@ video {
     background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
     z-index: 1000; /* Ensure it's on top of everything */
     
-    /* Center the content inside the dialogue overlay */
-    display: flex;
+    /* Center the content inside the dialogue overlay when it IS visible */
     justify-content: center;
     align-items: center;
 }
