@@ -18,9 +18,9 @@
         <h2>Love you forever and always</h2>
         
         <p>Dearest jaan meri</p>
-        <p>For your love of the cyberpunk aesthetic and my love of ASCII art, here's a little something for you. You are the most precious thing that I hold on to. I lof you so much babi. The rest of the surprise is here :)</p>
+        <p>For your love of the cyberpunk aesthetic and my love of ASCII art, here's a little something for you. You are the most precious thing that I hold on to.</p>
         
-        <button onclick="document.getElementById('letter-dialogue').style.display = 'none';">Close</button>
+        <button onclick="closeAndReplay()">Close</button>
     </div>
   </div>
 
@@ -32,6 +32,18 @@
   videoElement.addEventListener('ended', () => {
       dialogueBox.style.display = 'flex'; // Show the dialogue box
   });
+  
+  // NEW FUNCTION: Hides the box, resets video time, and starts playback
+  function closeAndReplay() {
+      // 1. Hide the dialogue box
+      dialogueBox.style.display = 'none';
+      
+      // 2. Reset video to the start (time 0)
+      videoElement.currentTime = 0;
+      
+      // 3. Start the video playing again
+      videoElement.play();
+  }
 </script>
 
 </body>
