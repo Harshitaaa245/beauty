@@ -1,1 +1,38 @@
+/* style.css */
 
+/* 1. Reset Body to fill the entire viewport and remove margins/scrollbars */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Establish a positioning context */
+    
+    /* Crucial: Ensure the background color is NOT set here or on '*' */
+    /* If you need a font, set it directly on the body or a specific element: */
+    /* font-family: "Pixelify Sans", sans-serif; */
+}
+
+/* 2. Style the video element to cover the entire background */
+video {
+    /* Pin the video to the viewport */
+    position: fixed; 
+    
+    /* Center the video element */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Stretch the video to cover the screen dimensionally */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    
+    /* Place the video behind any other content (which is currently just the video itself) */
+    z-index: -100;
+    
+    /* Ensure no stretching, maintaining aspect ratio while covering all space */
+    object-fit: cover; 
+}
