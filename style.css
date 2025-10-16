@@ -1,1 +1,35 @@
 
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+video {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; /* Start the left edge at 50% of the viewport width */
+    min-width: 100%; /* Ensure the video is at least as wide as the viewport */
+    min-height: 100%; /* Ensure the video is at least as tall as the viewport */
+    width: auto; /* Allow the width to scale freely */
+    height: auto; /* Allow the height to scale freely */
+    z-index: -1; /* Place the video behind any other content */
+    transform: translate(-50%, -50%); /* Center the video using its own size */
+    
+   
+    object-fit: cover;
+}
+
+
+
+
+* {
+    font-family: "Pixelify Sans", sans-serif;
+    background-color: #feefe5;
+}
+
