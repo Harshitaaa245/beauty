@@ -1,4 +1,10 @@
-/* style.css */
+/* style.css - FULL CODE */
+
+/* 0. Include your preferred font on all text elements, if desired */
+* {
+    font-family: "Pixelify Sans", sans-serif;
+    box-sizing: border-box; /* Helps with padding/borders on the dialogue box */
+}
 
 /* 1. Reset Body to fill the entire viewport and remove margins/scrollbars */
 body {
@@ -6,12 +12,8 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    position: relative; /* Establish a positioning context */
-    
-    /* Crucial: Ensure the background color is NOT set here or on '*' */
-    /* If you need a font, set it directly on the body or a specific element: */
-    /* font-family: "Pixelify Sans", sans-serif; */
+    overflow: hidden; /* Hide scrollbars */
+    position: relative; /* Establish a positioning context for the video */
 }
 
 /* 2. Style the video element to cover the entire background */
@@ -30,9 +32,60 @@ video {
     width: auto;
     height: auto;
     
-    /* Place the video behind any other content (which is currently just the video itself) */
+    /* Place the video behind all other content */
     z-index: -100;
     
     /* Ensure no stretching, maintaining aspect ratio while covering all space */
     object-fit: cover; 
+}
+
+/* 3. Styles for the Dialogue Box */
+
+#letter-dialogue {
+    display: none; /* Initially hide the dialogue box */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+    z-index: 1000; /* Ensure it's on top of everything */
+    
+    /* Center the content inside the dialogue overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-content {
+    background-color: #feefe5; /* Light background for the "paper" look */
+    color: #333;
+    padding: 30px;
+    border: 5px solid #333; /* Pixelated border look */
+    border-radius: 5px;
+    max-width: 90%;
+    width: 400px; /* Readable width */
+    text-align: center;
+    box-shadow: 10px 10px 0 0 #000000; /* Drop shadow for a 3D/pixel look */
+}
+
+.letter-content h2 {
+    font-size: 2em;
+    margin-top: 0;
+    color: #b73225;
+}
+
+.letter-content button {
+    background-color: #333;
+    color: #feefe5;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 3px 3px 0 0 #000000;
+}
+
+.letter-content button:hover {
+    background-color: #555;
 }
