@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fullscreen Video</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullscreen Video</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <video autoplay muted loop playsinline>
-    <source src="ASCII_10_16_2025_12_55_16 PM.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <video autoplay muted playsinline>
+    <source src="ASCII_10_16_2025_12_55_16 PM.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="letter-dialogue">
+    <div class="letter-content">
+        <h2>A Letter to You!</h2>
+        <p>This video was created especially for you.</p>
+        <p>I hope it brought a smile to your face and marked a wonderful moment.</p>
+        <p>All my best wishes to you on this day! 🎉</p>
+        <button onclick="document.getElementById('letter-dialogue').style.display = 'none';">Close</button>
+    </div>
+  </div>
+
+<script>
+  const videoElement = document.querySelector('video');
+  const dialogueBox = document.getElementById('letter-dialogue');
+
+  // Event listener that fires once the video finishes playing
+  videoElement.addEventListener('ended', () => {
+      dialogueBox.style.display = 'flex'; // Show the dialogue box
+  });
+</script>
 
 </body>
 </html>
-
